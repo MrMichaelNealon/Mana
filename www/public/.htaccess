@@ -1,0 +1,21 @@
+
+    #######################################################
+    #
+    #   mana/www/public/.htaccess
+    #
+
+    RewriteEngine On
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+
+    #######################################################
+    #
+    #   Passes request parameters to $_GET['URL'], if you
+    #   change this you should also chance the URL_PARAMS
+    #   definition in:
+    #
+    #       mana/config/url.php
+    #   
+    RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
